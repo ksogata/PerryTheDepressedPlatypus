@@ -74,6 +74,20 @@
             ],
             "host": "aliu",
             "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-        }
+        },
+        "event3": {
+          "name": "Base jumping",
+          "description": "For the extreme adventurers!",
+          "location": "Yosemite",
+          "Zip Code": "98701",
+          "State": "CA",
+          "event tags": [
+              "extreme",
+              "thrills",
+              "jumping"
+          ],
+          "host": "aliu",
+          "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
+      }
     }
   }
