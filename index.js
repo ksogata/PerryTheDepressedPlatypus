@@ -5,6 +5,7 @@ const request = require('request');
 var Promise = require('promise');
 var firebase = require("firebase");
 var bodyParser = require('body-parser');
+var cors = require('cors')
 
 var admin = require('firebase-admin');
 
@@ -19,6 +20,7 @@ var db = admin.firestore();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors())
 
 // Initialize Firebase
 var config = {
@@ -35,11 +37,10 @@ app.get('/api/getAllData', async (req, res) => {
   var final = [];
   const eventref = firebaseRef.ref('events');
   eventref.on('value', function(snapshot){
-    for(var i in snapshot.val()){
+    for(var key in snapshot.val()){
       //console.log(snapshot.val()[i]);
-      var hi = i.toString()
       var jsonO = {};
-      jsonO[i] = snapshot.val()[i];
+      jsonO[key] = snapshot.val()[key];
       final.push(jsonO);
     }
     res.json({"result":final});
@@ -53,11 +54,10 @@ app.get('/api/getSearchResult', async (req, res) => {
   var final = [];
   eventref.on('value', function(snapshot){
     //console.log(snapshot.val());
-    for(var i in snapshot.val()){
+    for(var key in snapshot.val()){
       //console.log(snapshot.val()[i]);
-      var hi = i.toString()
       var jsonO = {};
-      jsonO[i] = snapshot.val()[i];
+      jsonO[key] = snapshot.val()[key];
       final.push(jsonO);
     }
     res.json({"result":final});
