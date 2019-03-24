@@ -92,18 +92,18 @@
             "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
         },
         "event3": {
-          "name": "Base jumping",
-          "description": "For the extreme adventurers!",
-          "location": "Yosemite",
+          "name": "Basketball Pick Up Games",
+          "description": "",
+          "location": "YMCA",
           "zipcode": "98701",
           "users": [
             "simwu", "sparakala", "uparakala"            
           ],
           "state": "CA",
           "eventtags": [
-              "extreme",
-              "thrills",
-              "jumping"
+              "basketball",
+              "sports",
+              "workout"
           ],
           "host": "aliu",
           "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
