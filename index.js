@@ -14,20 +14,25 @@ var config = {
   databaseURL: "https://ulparakatest.firebaseio.com",
   storageBucket: "ulparakatest.appspot.com",
 };
+
 firebase.initializeApp(config);
-console.log("Firebase initialized");
+var firebaseRef = firebase.database();
 
-var users = ["Kyung Lee", "Simon Wu", "Subura Pyegnwe", "Uma Last", "Annie Last", "Kevin Saratoga"];
+app.get('/api/getFirebaseTest', async (req, res) => {
+  const eventref = firebaseRef.ref('id1');
+  eventref.on('value', function(snapshot){
+    console.log(snapshot.val());
+  }, function (error) {
+    console.log("error: "+ error);
+  });
 
-app.get('/api/getUsers', (req, res) => {
-  res.json({"sucess": users});
+  res.json({"2":"2"});
 
 });
 
 app.get('*', (req, res) => {
 	console.log("App running");
   res.json({'success': 'no errors'});
-    //res.sendFile(path.join(__dirname+'/velocity/public/index.html'));
 });
 
 const port = process.env.PORT || 5000;
