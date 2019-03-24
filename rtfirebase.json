@@ -21,7 +21,7 @@
         "location": "Walnut Creek",
         "zipcode": "94521",
         "events": [
-          "event3"
+          "event3", "event4"
         ],
         "wallet": 15,
         "event history": [
@@ -35,7 +35,7 @@
         "location": "Milipitas",
         "zipcode": "95035",
         "events": [
-          "event1"
+          "event1", "event4"
         ],
         "wallet": 30,
         "event history": [
@@ -48,7 +48,7 @@
         "location": "San Francisco",
         "zipcode": "94126",
         "events": [
-          "event1", "event2", "event3"
+          "event1", "event2", "event3", "event4"
         ],
         "wallet": 20,
         "event history": [
@@ -107,6 +107,23 @@
           ],
           "host": "aliu",
           "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-      }
+      },
+      "event4": {
+        "name": "Board Game Night",
+        "description": "Playing some cool new tabletop board games",
+        "location": "Daly City",
+        "zipcode": "94112",
+        "users": [
+          "simwu", "sparakala", "aliu"           
+        ],
+        "state": "CA",
+        "eventtags": [
+            "games",
+            "indoors",
+            "boardgames"
+        ],
+        "host": "uparakala",
+        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
+    }
     }
   }
