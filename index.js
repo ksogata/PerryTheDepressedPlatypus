@@ -4,6 +4,7 @@ const https = require('https');
 const request = require('request');
 var Promise = require('promise');
 var firebase = require("firebase");
+var bodyParser = require('body-parser');
 
 var admin = require('firebase-admin');
 
@@ -17,6 +18,7 @@ var db = admin.firestore();
 
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Initialize Firebase
 var config = {
@@ -47,7 +49,7 @@ app.get('/api/getAllData', async (req, res) => {
 });
 
 app.get('/api/getSearchResult', async (req, res) => {
-  const eventref = firebaseRef.ref('/events').orderByChild('name').startAt('Ba').endAt('Ba\uF7FF');
+  const eventref = firebaseRef.ref('/events').orderByChild('name').startAt(req.body.name).endAt(req.body.name+'\uF7FF');
   var final = [];
   eventref.on('value', function(snapshot){
     //console.log(snapshot.val());
