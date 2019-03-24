@@ -76,8 +76,39 @@ app.get('/api/getSearchResult', async (req, res) => {
   }, function (error) {
     console.log("error: "+ error);
   });
-
 });
+
+function postEvent(experience_name, desc, tags, capacity, addr1, addr2, city, state, zip) {
+  var postData = {
+    description: desc,
+    capacity: capacity,
+    name: experience_name,
+    state: state, 
+    address1: addr1,
+    address2: addr2, 
+    city: city,
+    zip: zip,
+    tags: tags
+  }; 
+
+  var newPostKey = firebaseRef.ref().child('events').push().key;
+  var updates = {};
+  updates['/events/' + newPostKey] = postData;
+  console.log(postData);
+  return firebaseRef.ref().update(updates);
+}
+
+app.post('/api/event', (req, res) => {
+  try {
+  console.log(req.body.tags);
+  postEvent(req.body.experience_name, req.body.desc, req.body.tags, req.body.capacity, req.body.addr1, req.body.addr2, req.body.city, req.body.state, req.body.zip);
+  res.header('Content-Type', 'application/json');
+  res.json({"Message": "Success import"});
+  }
+  catch (e) {
+    res.json({"Message": "Check JSON fields"});
+  }
+})
 
 app.get('/api/uma', (req, res) => {
 	var events = {}
