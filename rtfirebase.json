@@ -1,129 +1,88 @@
 {
-    "users": {
-      "uparakala": {
-        "firstname": "Uma",
-        "lastname": "Parakala",
-        "email": "upara@gmail.com",
-        "location": "Daly City",
-        "zipcode": "94112",
-        "events": [
-          "event3"
-        ],
-        "wallet": 20,
-        "event history": [
-            "event1"
-        ]
-      },
-      "sparakala": {
-        "firstname": "Subrahmanyam",
-        "lastname": "Parakala",
-        "email": "spara@gmail.com",
-        "location": "Walnut Creek",
-        "zipcode": "94521",
-        "events": [
-          "event3", "event4"
-        ],
-        "wallet": 15,
-        "event history": [
-            "event1"
-        ]
-      },
-      "aliu": {
-        "firstname": "Annie",
-        "lastname": "Liu",
-        "email": "aliu@gmail.com",
-        "location": "Milipitas",
-        "zipcode": "95035",
-        "events": [
-          "event1", "event4"
-        ],
-        "wallet": 30,
-        "event history": [
-        ]
-      },
-      "simwu": {
-        "firstname": "Simon",
-        "lastname": "Wu",
-        "email": "simwu@gmail.com",
-        "location": "San Francisco",
-        "zipcode": "94126",
-        "events": [
-          "event1", "event2", "event3", "event4"
-        ],
-        "wallet": 20,
-        "event history": [
-        ]
-      }
+  "events" : {
+    "event1" : {
+      "description" : "Baseball in the park!",
+      "eventtags" : [ "baseball", "sports", "outdoors" ],
+      "host" : "sparakala",
+      "location" : "Foothill Park",
+      "name" : "Baseball",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb",
+      "state" : "CA",
+      "users" : [ "simwu", "aliu" ],
+      "zipcode" : "94521"
     },
-
-    "events": {
-        "event1": {
-            "name": "Baseball",
-            "description": "Baseball in the park!",
-            "location": "Foothill Park",
-            "zipcode": "94521",
-            "users": [
-              "simwu", "aliu"            
-            ],
-            "state": "CA",
-            "eventtags": [
-                "baseball",
-                "sports",
-                "outdoors"
-            ],
-            "host": "sparakala",
-            "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-        },
-        "event2": {
-            "name": "Hiking",
-            "description": "Sunny afternoon hike!",
-            "location": "Iron horse trail",
-            "zipcode": "95035",
-            "users": [
-              "simwu"            
-            ],
-            "state": "CA",
-            "eventtags": [
-                "hiking",
-                "trails",
-                "outdoors"
-            ],
-            "host": "aliu",
-            "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-        },
-        "event3": {
-          "name": "Base jumping",
-          "description": "For the extreme adventurers!",
-          "location": "Yosemite",
-          "zipcode": "98701",
-          "users": [
-            "simwu", "sparakala", "uparakala"            
-          ],
-          "state": "CA",
-          "eventtags": [
-              "extreme",
-              "thrills",
-              "jumping"
-          ],
-          "host": "aliu",
-          "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
-      },
-      "event4": {
-        "name": "Board Game Night",
-        "description": "Playing some cool new tabletop board games",
-        "location": "Daly City",
-        "zipcode": "94112",
-        "users": [
-          "simwu", "sparakala", "aliu"           
-        ],
-        "state": "CA",
-        "eventtags": [
-            "games",
-            "indoors",
-            "boardgames"
-        ],
-        "host": "uparakala",
-        "photo":"https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/baseball.jpg?alt=media&token=e5b62fa5-27b6-4176-a9fa-47dc7baedebb"
+    "event2" : {
+      "description" : "Sunny afternoon hike!",
+      "eventtags" : [ "hiking", "trails", "outdoors" ],
+      "host" : "aliu",
+      "location" : "Iron horse trail",
+      "name" : "Hiking",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/hiking.jpg?alt=media&token=f08743ae-259c-4082-83a8-cccf729e4584",
+      "state" : "CA",
+      "users" : [ "simwu" ],
+      "zipcode" : "95035"
+    },
+    "event3" : {
+      "description" : "",
+      "eventtags" : [ "basketball", "sports", "workout" ],
+      "host" : "aliu",
+      "location" : "YMCA",
+      "name" : "Basketball Pick Up Games",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/basketball.jpg?alt=media&token=fa805bd8-2542-4132-a66a-817c2206008b",
+      "state" : "CA",
+      "users" : [ "simwu", "sparakala", "uparakala" ],
+      "zipcode" : "98701"
+    },
+    "event4" : {
+      "description" : "Playing some cool new tabletop board games",
+      "eventtags" : [ "games", "indoors", "boardgames" ],
+      "host" : "uparakala",
+      "location" : "Daly City",
+      "name" : "Board Game Night",
+      "photo" : "https://firebasestorage.googleapis.com/v0/b/ulparakatest.appspot.com/o/boardgames.jpg?alt=media&token=d8a53d63-0bd9-4c65-9644-d65c5bf544aa",
+      "state" : "CA",
+      "users" : [ "simwu", "sparakala", "aliu" ],
+      "zipcode" : "94112"
     }
+  },
+  "users" : {
+    "aliu" : {
+      "email" : "aliu@gmail.com",
+      "events" : [ "event1", "event4" ],
+      "firstname" : "Annie",
+      "lastname" : "Liu",
+      "location" : "Milipitas",
+      "wallet" : 30,
+      "zipcode" : "95035"
+    },
+    "simwu" : {
+      "email" : "simwu@gmail.com",
+      "events" : [ "event1", "event2", "event3", "event4" ],
+      "firstname" : "Simon",
+      "lastname" : "Wu",
+      "location" : "San Francisco",
+      "wallet" : 20,
+      "zipcode" : "94126"
+    },
+    "sparakala" : {
+      "email" : "spara@gmail.com",
+      "event history" : [ "event1" ],
+      "events" : [ "event3", "event4" ],
+      "firstname" : "Subrahmanyam",
+      "lastname" : "Parakala",
+      "location" : "Walnut Creek",
+      "wallet" : 15,
+      "zipcode" : "94521"
+    },
+    "uparakala" : {
+      "email" : "upara@gmail.com",
+      "event history" : [ "event1" ],
+      "events" : [ "event3" ],
+      "firstname" : "Uma",
+      "lastname" : "Parakala",
+      "location" : "Daly City",
+      "wallet" : 20,
+      "zipcode" : "94112"
     }
   }
+}

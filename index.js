@@ -60,16 +60,23 @@ app.get('/api/getAllData', async (req, res) => {
 
 //GET all search queries that start with the searched string. EX. Search string = Ba. Will return all events starting with "Ba".
 app.get('/api/getSearchResult', async (req, res) => {
-  const eventref = firebaseRef.ref('/events').orderByChild('name').startAt(req.body.name).endAt(req.body.name+'\uF7FF');
+  console.log(req.query.name);
+  const eventref = firebaseRef.ref('/events').orderByChild('name').startAt(req.query.name).endAt(req.query.name+'\uF7FF');
   var final = [];
+  var tempArray = [];
   eventref.on('value', function(snapshot){
     //console.log(snapshot.val());
     for(var key in snapshot.val()){
-      //console.log(snapshot.val()[i]);
-      var tempArray = [];
-      var jsonO = {};
-      jsonO[key] = snapshot.val()[key];
-      tempArray.push(jsonO);
+      //var jsonO = {};
+      //jsonO[key] = snapshot.val()[key];
+      tempArray.push(snapshot.val()[key]);
+
+      if (tempArray.length == 3) {
+        final.push(tempArray);
+        tempArray = [];
+      }
+    }
+    if (tempArray.length != 0) {
       final.push(tempArray);
     }
     res.json({"result":final});
