@@ -95,7 +95,7 @@ function postEvent(experience_name, desc, tags, capacity, addr1, addr2, city, st
     address2: addr2, 
     city: city,
     zip: zip,
-    tags: tags
+    eventtags: tags
   }; 
 
   var newPostKey = firebaseRef.ref().child('events').push().key;
