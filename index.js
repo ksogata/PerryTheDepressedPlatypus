@@ -39,9 +39,11 @@ app.get('/api/getAllData', async (req, res) => {
   eventref.on('value', function(snapshot){
     for(var key in snapshot.val()){
       //console.log(snapshot.val()[i]);
+      var tempArray = [];
       var jsonO = {};
       jsonO[key] = snapshot.val()[key];
-      final.push(jsonO);
+      tempArray.push(jsonO);
+      final.push(tempArray);
     }
     res.json({"result":final});
   }, function (error) {
@@ -56,9 +58,11 @@ app.get('/api/getSearchResult', async (req, res) => {
     //console.log(snapshot.val());
     for(var key in snapshot.val()){
       //console.log(snapshot.val()[i]);
+      var tempArray = [];
       var jsonO = {};
       jsonO[key] = snapshot.val()[key];
-      final.push(jsonO);
+      tempArray.push(jsonO);
+      final.push(tempArray);
     }
     res.json({"result":final});
   }, function (error) {
