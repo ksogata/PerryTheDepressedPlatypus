@@ -7,6 +7,7 @@ var firebase = require("firebase");
 
 const app = express();
 
+<<<<<<< HEAD
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCjdIT-abgL0KxsPLUP3f7n3GtefLNw3G4",
@@ -16,6 +17,14 @@ var config = {
 };
 firebase.initializeApp(config);
 console.log("Firebase initialized");
+=======
+var users = ["Kyung Lee", "Simon Wu", "Subura Pyegnwe", "Uma Last", "Annie Last", "Kevin Saratoga"];
+
+app.get('/api/getUsers', (req, res) => {
+  res.json({"sucess": users});
+
+});
+>>>>>>> 955f6484364b9922aa96b437f5d130e92d453e61
 
 app.get('*', (req, res) => {
 	console.log("App running");
@@ -25,3 +34,6 @@ app.get('*', (req, res) => {
 
 const port = process.env.PORT || 5000;
 app.listen(port);
+
+
+//first name last name
