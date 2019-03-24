@@ -108,12 +108,12 @@ function postEvent(experience_name, desc, tags, capacity, addr1, addr2, city, st
 
 app.post('/api/event', (req, res) => {
   try {
-  console.log(req.body.tags);
   postEvent(req.body.experience_name, req.body.desc, req.body.eventtags, req.body.capacity, req.body.addr1, req.body.addr2, req.body.city, req.body.state, req.body.zip);
   res.header('Content-Type', 'application/json');
   res.json({"Message": "Success import"});
   }
   catch (e) {
+    console.log(e);
     res.json({"Message": "Check JSON fields"});
   }
 })
