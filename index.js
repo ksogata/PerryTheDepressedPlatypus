@@ -5,6 +5,17 @@ const request = require('request');
 var Promise = require('promise');
 var firebase = require("firebase");
 
+var admin = require('firebase-admin');
+
+var serviceAccount = require('./ulparakatest.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+var db = admin.firestore();
+
+
 const app = express();
 
 // Initialize Firebase
@@ -27,6 +38,22 @@ app.get('/api/getFirebaseTest', async (req, res) => {
   });
 
   res.json({"2":"2"});
+
+});
+
+app.get('/api/uma', (req, res) => {
+	var events = {}
+  db.collection('event').get()
+  .then((snapshot) => {
+    snapshot.forEach((doc) => {
+      res.json({"sucess": doc});
+      events.info = doc; 
+    });
+  })
+  .catch((err) => {
+    console.log('Error getting documents', err);
+  });
+  
 
 });
 

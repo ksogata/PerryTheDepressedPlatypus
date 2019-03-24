@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.15.x",
     "firebase": "^5.9.1",
+    "firebase-admin": "^7.1.1",
     "npx": "^10.2.0",
     "promise": "^8.0.2",
     "request": "^2.88.0"
