@@ -29,15 +29,39 @@ var config = {
 firebase.initializeApp(config);
 var firebaseRef = firebase.database();
 
-app.get('/api/getFirebaseTest', async (req, res) => {
-  const eventref = firebaseRef.ref('id1');
+app.get('/api/getAllData', async (req, res) => {
+  var final = [];
+  const eventref = firebaseRef.ref('events');
   eventref.on('value', function(snapshot){
-    console.log(snapshot.val());
+    for(var i in snapshot.val()){
+      //console.log(snapshot.val()[i]);
+      var hi = i.toString()
+      var jsonO = {};
+      jsonO[i] = snapshot.val()[i];
+      final.push(jsonO);
+    }
+    res.json({"result":final});
   }, function (error) {
     console.log("error: "+ error);
   });
+});
 
-  res.json({"2":"2"});
+app.get('/api/getSearchResult', async (req, res) => {
+  const eventref = firebaseRef.ref('/events').orderByChild('name').startAt('Ba').endAt('Ba\uF7FF');
+  var final = [];
+  eventref.on('value', function(snapshot){
+    //console.log(snapshot.val());
+    for(var i in snapshot.val()){
+      //console.log(snapshot.val()[i]);
+      var hi = i.toString()
+      var jsonO = {};
+      jsonO[i] = snapshot.val()[i];
+      final.push(jsonO);
+    }
+    res.json({"result":final});
+  }, function (error) {
+    console.log("error: "+ error);
+  });
 
 });
 
@@ -47,13 +71,13 @@ app.get('/api/uma', (req, res) => {
   .then((snapshot) => {
     snapshot.forEach((doc) => {
       res.json({"sucess": doc});
-      events.info = doc; 
+      events.info = doc;
     });
   })
   .catch((err) => {
     console.log('Error getting documents', err);
   });
-  
+
 
 });
 
