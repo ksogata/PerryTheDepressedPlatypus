@@ -6,6 +6,9 @@
         "email": "upara@gmail.com",
         "location": "Daly City",
         "zipcode": "94112",
+        "events": [
+          "event3"
+        ],
         "wallet": 20,
         "event history": [
             "event1"
@@ -17,6 +20,9 @@
         "email": "spara@gmail.com",
         "location": "Walnut Creek",
         "zipcode": "94521",
+        "events": [
+          "event3"
+        ],
         "wallet": 15,
         "event history": [
             "event1"
@@ -28,9 +34,11 @@
         "email": "aliu@gmail.com",
         "location": "Milipitas",
         "zipcode": "95035",
+        "events": [
+          "event1"
+        ],
         "wallet": 30,
         "event history": [
-            "event1"
         ]
       },
       "simwu": {
@@ -39,9 +47,11 @@
         "email": "simwu@gmail.com",
         "location": "San Francisco",
         "zipcode": "94126",
+        "events": [
+          "event1", "event2", "event3"
+        ],
         "wallet": 20,
         "event history": [
-            "event1"
         ]
       }
     },
@@ -51,9 +61,12 @@
             "name": "Baseball",
             "description": "Baseball in the park!",
             "location": "Foothill Park",
-            "Zip Code": "94521",
-            "State": "CA",
-            "event tags": [
+            "zipcode": "94521",
+            "users": [
+              "simwu", "aliu"            
+            ],
+            "state": "CA",
+            "eventtags": [
                 "baseball",
                 "sports",
                 "outdoors"
@@ -65,9 +78,12 @@
             "name": "Hiking",
             "description": "Sunny afternoon hike!",
             "location": "Iron horse trail",
-            "Zip Code": "95035",
-            "State": "CA",
-            "event tags": [
+            "zipcode": "95035",
+            "users": [
+              "simwu"            
+            ],
+            "state": "CA",
+            "eventtags": [
                 "hiking",
                 "trails",
                 "outdoors"
@@ -79,9 +95,12 @@
           "name": "Base jumping",
           "description": "For the extreme adventurers!",
           "location": "Yosemite",
-          "Zip Code": "98701",
-          "State": "CA",
-          "event tags": [
+          "zipcode": "98701",
+          "users": [
+            "simwu", "sparakala", "uparakala"            
+          ],
+          "state": "CA",
+          "eventtags": [
               "extreme",
               "thrills",
               "jumping"
